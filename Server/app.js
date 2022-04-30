@@ -7,6 +7,10 @@ const { transfersRouter } = require('./routes/transfers.routes');
 //utils
 const { db } = require('./utils/database');
 
+//Models
+const {Transfer} = require('./models/transfers.model')
+const {User} = require('./models/users.model')
+
 const app = express(); //guardamos en app el express
 
 //Enable incoming JSON data
@@ -22,11 +26,15 @@ db.authenticate() //Intentará conectarse a la db
   .catch(err => console.log(err));
 
 db.sync({
-  // force: true
+  //force: true
 }) //Intentará conectarse
   //EL FORCE ES PELIGROSOOOOOOOO
   .then(() => console.log('Sync successfully'))
   .catch(err => console.log(err));
+
+//Model Relations
+User.hasMany(Transfer)
+Transfer.belongsTo(User)
 
 const PORT = '4000';
 

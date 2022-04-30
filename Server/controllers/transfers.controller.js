@@ -1,10 +1,10 @@
-const { Repair } = require('../models/repairs.model');
+const { Transfer } = require('../models/transfers.model');
 
 const transfer = async (req, res) => {
     try {
-        const repairs = await Repair.findOne({ where: { status: 'pending' } });
+        const transfers = await transfer.findOne({ where: { status: 'pending' } });
         res.status(201).json({
-            repairs,
+            transfers,
         });
     } catch (error) {
         console.log(error);

@@ -16,9 +16,10 @@ const User = db.define('user', {
         allowNull: false
     },
     accountNumber:{
-        type: DataTypes.STRING , //tipo de dato universal en sequielize
+        type: DataTypes.INTEGER , //tipo de dato universal en sequielize
         unique: true,
-        allowNull: false
+        allowNull: false,
+        defaultValue: Math.floor(Math.random()*(999999 - 100000)+100000)
     },
     password:{
         type: DataTypes.STRING , //tipo de dato universal en sequielize

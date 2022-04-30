@@ -19,8 +19,16 @@ const signup = async (req, res) => {
 const login = async (req, res) => {
   try {
     const {name, password} = req.body
+
+    const user = await User.findOne({where: {name, password}})
+
+    if(!user){
+      res.status(401).json({
+        status: "Name or password invalid"
+      });
+    }
     res.status(201).json({
-      
+       user
     });
   } catch (error) {
     console.log(error);
@@ -28,8 +36,6 @@ const login = async (req, res) => {
 };
 
 const history = async (req, res) => {
-  console.log("parching")
-
   try {
     
   } catch (error) {
