@@ -1,0 +1,8 @@
+#Server
+/Server/node_modules
+
+#Client
+/Client/node_modules
+
+#npm-run-all
+/node_modules
