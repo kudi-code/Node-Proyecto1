@@ -35,16 +35,10 @@ const login = async (req, res) => {
   }
 };
 
-const history = async (req, res) => {
-  try {
-    
-  } catch (error) {
-    console.log(error);
-  }
-};
+
+
 
 module.exports = {
   signup,
-  login,
-  history
+  login
 };

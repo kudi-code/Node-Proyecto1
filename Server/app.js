@@ -26,14 +26,14 @@ db.authenticate() //Intentará conectarse a la db
   .catch(err => console.log(err));
 
 db.sync({
-  //force: true
+  // force: true
 }) //Intentará conectarse
   //EL FORCE ES PELIGROSOOOOOOOO
   .then(() => console.log('Sync successfully'))
   .catch(err => console.log(err));
 
 //Model Relations
-User.hasMany(Transfer)
+User.hasMany(Transfer, { foreignKey: 'senderUserId, receiverUserId' });
 Transfer.belongsTo(User)
 
 const PORT = '4000';

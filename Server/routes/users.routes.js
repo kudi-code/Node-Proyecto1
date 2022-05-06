@@ -3,9 +3,10 @@ const express = require('express');
 //controllers
 const {
   signup,
-  login,
-  history
+  login
 } = require('../controllers/users.controller');
+
+const {getTransfers} = require('../controllers/transfers.controller');
 
 //router
 const router = express.Router();
@@ -15,7 +16,7 @@ router.post('/signup', signup);
 
 router.post('/login', login);
 
-router.get('/:id/history', history)
+router.get('/:id/history', getTransfers)
 
 
 //export default router es igual a:

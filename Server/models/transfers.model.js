@@ -11,8 +11,7 @@ const Transfer = db.define('transfers', {
         allowNull: false
     },
     amount: {
-        type: DataTypes.DATE , //tipo de dato universal en sequelize
-        //YYYY-MM-DD
+        type: DataTypes.INTEGER , 
         unique: false,
         allowNull: false
     },
